@@ -156,14 +156,9 @@ export default function LandingPage() {
           >
             Preços
           </Link>
-          <Button
-            variant="outline"
-            className="text-purple-600 border-purple-600 hover:bg-purple-600 hover:text-white dark:text-purple-400 dark:border-purple-400 dark:hover:bg-purple-400 dark:hover:text-gray-900"
-          >
-            Login
-          </Button>
+          
           <Button className="bg-purple-600 text-white hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600">
-            Cadastre-se
+            Comece agora
           </Button>
         </nav>
         <button
@@ -207,15 +202,11 @@ export default function LandingPage() {
           >
             Preços
           </Link>
-          <Button
-            variant="outline"
-            className="w-full mt-2 text-purple-600 border-purple-600 hover:bg-purple-600 hover:text-white dark:text-purple-400 dark:border-purple-400 dark:hover:bg-purple-400 dark:hover:text-gray-900"
-          >
-            Login
-          </Button>
-          <Button className="w-full mt-2 bg-purple-600 text-white hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600">
-            Cadastre-se
-          </Button>
+          <Link href="/login">
+            <Button className="w-full mt-2 bg-purple-600 text-white hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600">
+              Comece agora
+            </Button>
+          </Link>
         </div>
       )}
       <main className="flex-1">
