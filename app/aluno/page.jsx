@@ -1,39 +1,10 @@
 'use client'
 
-import { useState } from 'react'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import {
-  BookOpen,
-  Video,
-  MessageCircle,
-  Users,
-  Bell,
-  Search,
-  LogOut,
-  Home,
-  Bookmark,
-  Calendar,
-  Settings,
-  Menu,
-  ChevronLeft,
-  ChevronRight,
-} from 'lucide-react'
-import {
-  Sidebar,
-  SidebarHeader,
-  SidebarContent,
-  SidebarFooter,
-  SidebarProvider,
-  SidebarTrigger,
-  SidebarMenu,
-  SidebarMenuItem,
-  SidebarMenuButton,
-} from '@/components/ui/sidebar'
+import { BookOpen, Video, Users } from 'lucide-react'
 
 const CourseCard = ({ title, progress, lastLesson }) => (
   <Card className="hover:shadow-md transition-shadow">
