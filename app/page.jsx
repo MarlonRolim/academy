@@ -132,8 +132,8 @@ export default function LandingPage() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
-      <header className="px-4 lg:px-6 h-16 flex items-center sticky top-0 z-50 bg-white/80 backdrop-blur-md dark:bg-gray-800/80">
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <header className="px-4 lg:px-6 h-16 flex items-center sticky top-0 z-50 bg-white/80 backdrop-blur-md">
         <Link className="flex items-center justify-center" href="#">
           <LibraryBig className="h-6 w-6 text-[#00B8A5] dark:text-purple-400" />
           <span className="font-extrabold ml-2 text-xl md:text-2xl bg-clip-text text-transparent bg-[#333432] ">
