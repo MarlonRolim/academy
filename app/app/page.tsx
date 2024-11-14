@@ -1,16 +1,26 @@
-'use client'
-
-import { motion } from 'framer-motion'
+import { createServerComponentClient,User } from "@supabase/auth-helpers-nextjs";
+import { redirect, RedirectType, useRouter } from "next/navigation";
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
 import { BookOpen, Video, Users } from 'lucide-react'
+import WelcomeText from "./_components/welcome-text"
+import { useEffect, useState } from "react";
+import { cookies } from "next/headers";
 
-const CourseCard = ({ title, progress, lastLesson }) => (
+const CourseCard = ({ 
+  title, 
+  progress, 
+  lastLesson 
+}: {
+  title: string;
+  progress: number;
+  lastLesson: string;
+}) => (
   <Card className="hover:shadow-md transition-shadow">
     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
       <CardTitle className="text-sm font-medium">{title}</CardTitle>
-      <Video className="h-4 w-4 text-purple-600" />
+      <Video className="h-4 w-4 text-[#00B8A5]" />
     </CardHeader>
     <CardContent>
       <div className="text-xs text-gray-600 mb-2">
@@ -18,19 +28,19 @@ const CourseCard = ({ title, progress, lastLesson }) => (
       </div>
       <Progress
         value={progress}
-        className="w-full bg-purple-200"
-        // indicatorClassName="bg-purple-600"
+        className="w-full bg-[#e4fffd]"
+        // indicatorClassName="bg-[#00B8A5]"
       />
       <div className="text-xs text-gray-600 mt-2">{progress}% concluído</div>
     </CardContent>
   </Card>
 )
 
-const StatCard = ({ title, value, icon: Icon }) => (
+const StatCard = ({ title, value, icon: Icon }: { title: string, value: string, icon: React.ElementType }) => (
   <Card>
     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
       <CardTitle className="text-sm font-medium">{title}</CardTitle>
-      <Icon className="h-4 w-4 text-purple-600" />
+      <Icon className="h-4 w-4 text-[#00B8A5]" />
     </CardHeader>
     <CardContent>
       <div className="text-2xl font-bold">{value}</div>
@@ -38,17 +48,25 @@ const StatCard = ({ title, value, icon: Icon }) => (
   </Card>
 )
 
-export default function Dashboard() {
+export default async function Dashboard() {
+  let loggedIn = false
+  try{
+      
+      const supabase = createServerComponentClient({cookies})
+      const {data: {session}} = await supabase.auth.getSession()
+      if (session) loggedIn = true
+  }catch(error){
+      console.error("login",error)
+  } finally{
+      if (!loggedIn) redirect("/",RedirectType.replace)
+  }
+  
+
+
+  
   return (
     <main>
-      <motion.h1
-        className="text-3xl font-bold mb-6 text-gray-800"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        Bem-vindo de volta, Aluno!
-      </motion.h1>
+      <WelcomeText/>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         <StatCard title="Cursos em Andamento" value="4" icon={BookOpen} />
         <StatCard title="Horas Estudadas" value="32" icon={Video} />
@@ -85,7 +103,7 @@ export default function Dashboard() {
             <p className="font-medium text-gray-800">
               Tema: Estratégias de Estudo Eficientes
             </p>
-            <Button className="mt-4 bg-purple-600 hover:bg-purple-700 text-white">
+            <Button className="mt-4 bg-[#00B8A5] hover:bg-[#333432] text-white">
               Entrar na Sala
             </Button>
           </CardContent>
@@ -113,74 +131,14 @@ export default function Dashboard() {
             </ul>
             <Button
               variant="outline"
-              className="mt-4 w-full border-purple-600 text-purple-600 hover:bg-purple-50"
+              className="mt-4 w-full border-[#00B8A5] text-[#00B8A5] hover:bg-purple-50"
             >
               Ver Todas Atividades
             </Button>
           </CardContent>
         </Card>
       </div>
-      <h2 className="text-2xl font-semibold mt-8 mb-4 text-gray-800">
-        Recomendados para Você
-      </h2>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <Card className="hover:shadow-md transition-shadow">
-          <CardHeader>
-            <CardTitle className="text-gray-800">
-              Desenvolvimento Web Avançado
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-600 mb-4">
-              Aprenda técnicas avançadas de desenvolvimento web e melhore suas
-              habilidades.
-            </p>
-            <Button
-              variant="outline"
-              className="w-full border-purple-600 text-purple-600 hover:bg-purple-50"
-            >
-              Ver Detalhes
-            </Button>
-          </CardContent>
-        </Card>
-        <Card className="hover:shadow-md transition-shadow">
-          <CardHeader>
-            <CardTitle className="text-gray-800">
-              Inteligência Artificial: Fundamentos
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-600 mb-4">
-              Explore os conceitos básicos de IA e suas aplicações práticas.
-            </p>
-            <Button
-              variant="outline"
-              className="w-full border-purple-600 text-purple-600 hover:bg-purple-50"
-            >
-              Ver Detalhes
-            </Button>
-          </CardContent>
-        </Card>
-        <Card className="hover:shadow-md transition-shadow">
-          <CardHeader>
-            <CardTitle className="text-gray-800">
-              Gestão de Projetos Ágeis
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-600 mb-4">
-              Aprenda a liderar projetos de forma eficiente usando metodologias
-              ágeis.
-            </p>
-            <Button
-              variant="outline"
-              className="w-full border-purple-600 text-purple-600 hover:bg-purple-50"
-            >
-              Ver Detalhes
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
+      
     </main>
   )
 }

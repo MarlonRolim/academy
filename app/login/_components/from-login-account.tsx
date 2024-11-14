@@ -52,7 +52,7 @@ export default function FormLoginAccount() {
     return (
         <Card>
           <CardHeader>
-            <CardTitle className="text-purple-600">Login</CardTitle>
+            <CardTitle className="text-[#00B8A5]">Login</CardTitle>
             <CardDescription>
               Entre com sua conta para acessar o sistema.
             </CardDescription>
@@ -68,7 +68,7 @@ export default function FormLoginAccount() {
                       <FormLabel>Email</FormLabel>
                       <FormControl>
                         <Input 
-                          className="focus-visible:ring-purple-600"
+                          className="focus-visible:ring-[#00B8A5]"
                           {...field}
                         />
                       </FormControl>
@@ -85,7 +85,7 @@ export default function FormLoginAccount() {
                       <FormControl>
                         <Input
                           type="password"
-                          className="focus-visible:ring-purple-600"
+                          className="focus-visible:ring-[#00B8A5]"
                           {...field}
                         />
                       </FormControl>
@@ -94,7 +94,7 @@ export default function FormLoginAccount() {
                   )}
                 />
                 <CardFooter className="px-0 pt-4">
-                  <Button type="submit" className="w-full bg-purple-600 text-white">
+                  <Button type="submit" className="w-full bg-[#00B8A5] text-white">
                     Entrar
                   </Button>
                 </CardFooter>

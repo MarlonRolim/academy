@@ -13,7 +13,7 @@ export default async function Login(){
     }catch(error){
         console.error("login",error)
     } finally{
-        if (loggedIn) redirect("/aluno",RedirectType.replace)
+        if (loggedIn) redirect("/app",RedirectType.replace)
     }
 
     return (

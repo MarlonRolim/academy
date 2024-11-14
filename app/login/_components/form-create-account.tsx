@@ -36,9 +36,9 @@ export default function FormCreateAccount() {
         const { data: { user }, error } = await supabase.auth.signUp({
           email,
           password,
-          options: {
-            emailRedirectTo: `${window.location.origin}/auth/callback`
-          }
+          // options: {
+          //   emailRedirectTo: `${window.location.origin}/auth/callback`
+          // }
         })
         
         if (error) {
@@ -47,7 +47,8 @@ export default function FormCreateAccount() {
         }
         if (user) {
             form.reset()
-            router.push('/login')
+            // router.push('/login')
+            router.refresh()
         }
 
       } catch (error) {
@@ -58,7 +59,7 @@ export default function FormCreateAccount() {
     return (
         <Card>
           <CardHeader>
-            <CardTitle className="text-purple-600">Cadastre-se</CardTitle>
+            <CardTitle className="text-[#00B8A5]">Cadastre-se</CardTitle>
             <CardDescription>
               Crie sua conta para começar a usar o sistema.
             </CardDescription>
@@ -74,7 +75,7 @@ export default function FormCreateAccount() {
                       <FormLabel>Email</FormLabel>
                       <FormControl>
                         <Input 
-                          className="focus-visible:ring-purple-600"
+                          className="focus-visible:ring-[#00B8A5]"
                           {...field}
                         />
                       </FormControl>
@@ -91,7 +92,7 @@ export default function FormCreateAccount() {
                       <FormControl>
                         <Input
                           type="password"
-                          className="focus-visible:ring-purple-600"
+                          className="focus-visible:ring-[#00B8A5]"
                           {...field}
                         />
                       </FormControl>
@@ -100,7 +101,7 @@ export default function FormCreateAccount() {
                   )}
                 />
                 <CardFooter className="px-0 pt-4">
-                  <Button type="submit" className="w-full bg-purple-600 text-white">
+                  <Button type="submit" className="w-full bg-[#00B8A5] text-white">
                     Cadastrar
                   </Button>
                 </CardFooter>

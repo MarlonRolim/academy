@@ -14,6 +14,9 @@ import {
   ChevronRight,
   ChevronLeft,
   Check,
+  BookOpenText,
+  Library,
+  LibraryBig,
 } from 'lucide-react'
 
 const InteractiveDemo = () => {
@@ -46,7 +49,7 @@ const InteractiveDemo = () => {
   }, [step, controls])
 
   return (
-    <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-6 rounded-lg shadow-lg text-white">
+    <div className="bg-gradient-to-r from-[#00B8A5] to-[#333432] p-6 rounded-lg shadow-lg text-white">
       <motion.div key={step} initial={{ opacity: 0, y: 20 }} animate={controls}>
         <h3 className="text-xl md:text-2xl font-bold mb-4">
           {steps[step].title}
@@ -59,7 +62,7 @@ const InteractiveDemo = () => {
           onClick={() =>
             setStep((prev) => (prev > 0 ? prev - 1 : steps.length - 1))
           }
-          className="text-white border-white hover:bg-white hover:text-purple-600 text-sm md:text-base"
+          className="text-white border-white hover:bg-white hover:text-[#00B8A5] text-sm md:text-base"
         >
           <ChevronLeft className="mr-2 h-4 w-4" /> Anterior
         </Button>
@@ -68,7 +71,7 @@ const InteractiveDemo = () => {
           onClick={() =>
             setStep((prev) => (prev < steps.length - 1 ? prev + 1 : 0))
           }
-          className="text-white border-white hover:bg-white hover:text-purple-600 text-sm md:text-base"
+          className="text-white border-white hover:bg-white hover:text-[#00B8A5] text-sm md:text-base"
         >
           Próximo <ChevronRight className="ml-2 h-4 w-4" />
         </Button>
@@ -132,32 +135,32 @@ export default function LandingPage() {
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <header className="px-4 lg:px-6 h-16 flex items-center sticky top-0 z-50 bg-white/80 backdrop-blur-md dark:bg-gray-800/80">
         <Link className="flex items-center justify-center" href="#">
-          <BookOpen className="h-6 w-6 text-purple-600 dark:text-purple-400" />
-          <span className="ml-2 text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400">
-            EduConnect
+          <LibraryBig className="h-6 w-6 text-[#00B8A5] dark:text-purple-400" />
+          <span className="font-extrabold ml-2 text-xl md:text-2xl bg-clip-text text-transparent bg-[#333432] ">
+          suply<span className="font-extralight bg-clip-text text-transparent bg-gradient-to-r from-[#333432] to-[#00B8A5]">Academy</span>
           </span>
         </Link>
         <nav className="ml-auto items-center space-x-4 hidden md:flex">
           <Link
-            className="text-sm font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+            className="text-sm font-medium hover:text-[#00B8A5] dark:hover:text-purple-400 transition-colors"
             href="#features"
           >
             Recursos
           </Link>
           <Link
-            className="text-sm font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+            className="text-sm font-medium hover:text-[#00B8A5] dark:hover:text-purple-400 transition-colors"
             href="#how-it-works"
           >
             Como Funciona
           </Link>
           <Link
-            className="text-sm font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+            className="text-sm font-medium hover:text-[#00B8A5] dark:hover:text-purple-400 transition-colors"
             href="#pricing"
           >
             Preços
           </Link>
           
-          <Button className="bg-purple-600 text-white hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600">
+          <Button className="bg-[#00B8A5] text-white hover:bg-[#333432] dark:bg-purple-500 dark:hover:bg-[#00B8A5]">
             Comece agora
           </Button>
         </nav>
@@ -185,25 +188,25 @@ export default function LandingPage() {
       {isMenuOpen && (
         <div className="md:hidden bg-white dark:bg-gray-800 py-2 px-4">
           <Link
-            className="block py-2 text-sm font-medium hover:text-purple-600 dark:hover:text-purple-400"
+            className="block py-2 text-sm font-medium hover:text-[#00B8A5] dark:hover:text-purple-400"
             href="#features"
           >
             Recursos
           </Link>
           <Link
-            className="block py-2 text-sm font-medium hover:text-purple-600 dark:hover:text-purple-400"
+            className="block py-2 text-sm font-medium hover:text-[#00B8A5] dark:hover:text-purple-400"
             href="#how-it-works"
           >
             Como Funciona
           </Link>
           <Link
-            className="block py-2 text-sm font-medium hover:text-purple-600 dark:hover:text-purple-400"
+            className="block py-2 text-sm font-medium hover:text-[#00B8A5] dark:hover:text-purple-400"
             href="#pricing"
           >
             Preços
           </Link>
           <Link href="/login">
-            <Button className="w-full mt-2 bg-purple-600 text-white hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600">
+            <Button className="w-full mt-2 bg-[#00B8A5] text-white hover:bg-[#333432] dark:bg-purple-500 dark:hover:bg-[#00B8A5]">
               Comece agora
             </Button>
           </Link>
@@ -217,7 +220,7 @@ export default function LandingPage() {
             animate="animate"
             variants={fadeIn}
           >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-[#00B8A5] to-[#333432] dark:from-purple-400 dark:to-blue-400 mb-4">
               Revolucione Sua Educação
             </h1>
             <p className="mx-auto max-w-[700px] text-gray-700 text-sm md:text-base lg:text-lg dark:text-gray-300 mb-8">
@@ -226,12 +229,12 @@ export default function LandingPage() {
               personalizado.
             </p>
             <div className="space-y-4 md:space-y-0 md:space-x-4">
-              <Button className="w-full md:w-auto bg-purple-600 text-white hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600 transition-all duration-300 transform hover:scale-105">
+              <Button className="w-full md:w-auto bg-[#00B8A5] text-white hover:bg-[#333432] dark:bg-purple-500 dark:hover:bg-[#00B8A5] transition-all duration-300 transform hover:scale-105">
                 Comece Sua Jornada
               </Button>
               <Button
                 variant="outline"
-                className="w-full md:w-auto mt-2 md:mt-0 text-purple-600 border-purple-600 hover:bg-purple-600 hover:text-white dark:text-purple-400 dark:border-purple-400 dark:hover:bg-purple-400 dark:hover:text-gray-900 transition-all duration-300 transform hover:scale-105"
+                className="w-full md:w-auto mt-2 md:mt-0 text-[#00B8A5] border-[#00B8A5] hover:bg-[#00B8A5] hover:text-white dark:text-purple-400 dark:border-purple-400 dark:hover:bg-purple-400 dark:hover:text-gray-900 transition-all duration-300 transform hover:scale-105"
               >
                 Conheça Nossos Cursos
               </Button>
@@ -242,7 +245,7 @@ export default function LandingPage() {
         <section className="w-full py-12 md:py-24 bg-gray-100 dark:bg-gray-800">
           <div className="container mx-auto px-4 md:px-6">
             <motion.h2
-              className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-center mb-8 md:mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-center mb-8 md:mb-12 bg-clip-text text-transparent bg-gradient-to-r from-[#00B8A5] to-[#333432] dark:from-purple-400 dark:to-blue-400"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -256,7 +259,7 @@ export default function LandingPage() {
         <section id="features" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
             <motion.h2
-              className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-center mb-8 md:mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-center mb-8 md:mb-12 bg-clip-text text-transparent bg-gradient-to-r from-[#00B8A5] to-[#333432] dark:from-purple-400 dark:to-blue-400"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -271,8 +274,8 @@ export default function LandingPage() {
               >
                 <Card className="hover:shadow-lg transition-shadow duration-300 overflow-hidden group">
                   <CardContent className="p-6 relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-                    <Video className="h-12 w-12 text-purple-600 dark:text-purple-400 mb-4 relative z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#00B8A5] to-[#333432] opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                    <Video className="h-12 w-12 text-[#00B8A5] dark:text-purple-400 mb-4 relative z-10" />
                     <h3 className="text-lg md:text-xl font-bold mb-2 relative z-10">
                       Video-aulas Interativas
                     </h3>
@@ -290,8 +293,8 @@ export default function LandingPage() {
               >
                 <Card className="hover:shadow-lg transition-shadow duration-300 overflow-hidden group">
                   <CardContent className="p-6 relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-                    <MessageCircle className="h-12 w-12 text-purple-600 dark:text-purple-400 mb-4 relative z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#00B8A5] to-[#333432] opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                    <MessageCircle className="h-12 w-12 text-[#00B8A5] dark:text-purple-400 mb-4 relative z-10" />
                     <h3 className="text-lg md:text-xl font-bold mb-2 relative z-10">
                       Mentoria Personalizada
                     </h3>
@@ -309,8 +312,8 @@ export default function LandingPage() {
               >
                 <Card className="hover:shadow-lg transition-shadow duration-300 overflow-hidden group">
                   <CardContent className="p-6 relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-                    <Users className="h-12 w-12 text-purple-600 dark:text-purple-400 mb-4 relative z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#00B8A5] to-[#333432] opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                    <Users className="h-12 w-12 text-[#00B8A5] dark:text-purple-400 mb-4 relative z-10" />
                     <h3 className="text-lg md:text-xl font-bold mb-2 relative z-10">
                       Comunidade de Aprendizado
                     </h3>
@@ -328,7 +331,7 @@ export default function LandingPage() {
         <section className="w-full py-12 md:py-24 bg-purple-100 dark:bg-purple-900">
           <div className="container mx-auto px-4 md:px-6">
             <motion.h2
-              className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-center mb-8 md:mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-center mb-8 md:mb-12 bg-clip-text text-transparent bg-gradient-to-r from-[#00B8A5] to-[#333432] dark:from-purple-400 dark:to-blue-400"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -355,7 +358,7 @@ export default function LandingPage() {
         <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
             <motion.h2
-              className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-center mb-8 md:mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-center mb-8 md:mb-12 bg-clip-text text-transparent bg-gradient-to-r from-[#00B8A5] to-[#333432] dark:from-purple-400 dark:to-blue-400"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -388,7 +391,7 @@ export default function LandingPage() {
                     onClick={() => setCurrentTestimonial(index)}
                     className={`w-3 h-3 rounded-full ${
                       index === currentTestimonial
-                        ? 'bg-purple-600'
+                        ? 'bg-[#00B8A5]'
                         : 'bg-gray-300'
                     }`}
                     aria-label={`Ver depoimento ${index + 1}`}
@@ -405,7 +408,7 @@ export default function LandingPage() {
         >
           <div className="container mx-auto px-4 md:px-6">
             <motion.h2
-              className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-center mb-8 md:mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-center mb-8 md:mb-12 bg-clip-text text-transparent bg-gradient-to-r from-[#00B8A5] to-[#333432] dark:from-purple-400 dark:to-blue-400"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -420,7 +423,7 @@ export default function LandingPage() {
               >
                 <Card className="hover:shadow-lg transition-all duration-300 transform hover:scale-105">
                   <CardContent className="p-6">
-                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-purple-600 dark:text-purple-400">
+                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-[#00B8A5] dark:text-purple-400">
                       Plano Básico
                     </h3>
                     <p className="text-3xl md:text-4xl font-bold mb-4">
@@ -446,7 +449,7 @@ export default function LandingPage() {
                         </span>
                       </li>
                     </ul>
-                    <Button className="w-full bg-purple-600 text-white hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600">
+                    <Button className="w-full bg-[#00B8A5] text-white hover:bg-[#333432] dark:bg-purple-500 dark:hover:bg-[#00B8A5]">
                       Começar Agora
                     </Button>
                   </CardContent>
@@ -457,9 +460,9 @@ export default function LandingPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <Card className="hover:shadow-lg transition-all duration-300 transform hover:scale-105 border-purple-600 dark:border-purple-400">
+                <Card className="hover:shadow-lg transition-all duration-300 transform hover:scale-105 border-[#00B8A5] dark:border-purple-400">
                   <CardContent className="p-6">
-                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-purple-600 dark:text-purple-400">
+                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-[#00B8A5] dark:text-purple-400">
                       Plano Pro
                     </h3>
                     <p className="text-3xl md:text-4xl font-bold mb-4">
@@ -491,7 +494,7 @@ export default function LandingPage() {
                         </span>
                       </li>
                     </ul>
-                    <Button className="w-full bg-purple-600 text-white hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600">
+                    <Button className="w-full bg-[#00B8A5] text-white hover:bg-[#333432] dark:bg-purple-500 dark:hover:bg-[#00B8A5]">
                       Assinar Agora
                     </Button>
                   </CardContent>
@@ -504,7 +507,7 @@ export default function LandingPage() {
               >
                 <Card className="hover:shadow-lg transition-all duration-300 transform hover:scale-105">
                   <CardContent className="p-6">
-                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-purple-600 dark:text-purple-400">
+                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-[#00B8A5] dark:text-purple-400">
                       Plano Professor
                     </h3>
                     <p className="text-3xl md:text-4xl font-bold mb-4">
@@ -536,7 +539,7 @@ export default function LandingPage() {
                         </span>
                       </li>
                     </ul>
-                    <Button className="w-full bg-purple-600 text-white hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600">
+                    <Button className="w-full bg-[#00B8A5] text-white hover:bg-[#333432] dark:bg-purple-500 dark:hover:bg-[#00B8A5]">
                       Comece a Ensinar
                     </Button>
                   </CardContent>
@@ -548,7 +551,7 @@ export default function LandingPage() {
 
         <section
           id="cta"
-          className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-purple-600 to-blue-600"
+          className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-[#00B8A5] to-[#333432]"
         >
           <div className="container mx-auto px-4 md:px-6 text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-white mb-4 md:mb-6">
@@ -558,7 +561,7 @@ export default function LandingPage() {
               Junte-se a milhares de alunos que estão transformando suas vidas
               através da educação online.
             </p>
-            <Button className="bg-white text-purple-600 hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-base md:text-lg px-6 py-3">
+            <Button className="bg-white text-[#00B8A5] hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-base md:text-lg px-6 py-3">
               Inscreva-se Gratuitamente
             </Button>
           </div>
@@ -567,7 +570,7 @@ export default function LandingPage() {
         <section id="faq" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
             <motion.h2
-              className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-center mb-8 md:mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-center mb-8 md:mb-12 bg-clip-text text-transparent bg-gradient-to-r from-[#00B8A5] to-[#333432] dark:from-purple-400 dark:to-blue-400"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -631,25 +634,25 @@ export default function LandingPage() {
             </div>
             <nav className="flex flex-wrap justify-center gap-4 sm:gap-6">
               <Link
-                className="text-sm hover:underline underline-offset-4 text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"
+                className="text-sm hover:underline underline-offset-4 text-gray-500 hover:text-[#00B8A5] dark:text-gray-400 dark:hover:text-purple-400"
                 href="#"
               >
                 Sobre Nós
               </Link>
               <Link
-                className="text-sm hover:underline underline-offset-4 text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"
+                className="text-sm hover:underline underline-offset-4 text-gray-500 hover:text-[#00B8A5] dark:text-gray-400 dark:hover:text-purple-400"
                 href="#"
               >
                 Blog
               </Link>
               <Link
-                className="text-sm hover:underline underline-offset-4 text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"
+                className="text-sm hover:underline underline-offset-4 text-gray-500 hover:text-[#00B8A5] dark:text-gray-400 dark:hover:text-purple-400"
                 href="#"
               >
                 Termos de Serviço
               </Link>
               <Link
-                className="text-sm hover:underline underline-offset-4 text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"
+                className="text-sm hover:underline underline-offset-4 text-gray-500 hover:text-[#00B8A5] dark:text-gray-400 dark:hover:text-purple-400"
                 href="#"
               >
                 Privacidade
