@@ -39,7 +39,7 @@ export function SidebarAluno() {
   return (
     <Sidebar className="bg-black border-r border-gray-200">
       <SidebarHeader className="p-4">
-        <Link href="/dashboard" className="flex items-center space-x-2">
+        <Link href="/dash" className="flex items-center space-x-2">
         <LibraryBig className="h-6 w-6 text-[#00B8A5]" />
           <span className="font-extrabold text-xl text-[#333432]">
             suply<span className="font-extralight bg-clip-text text-transparent bg-gradient-to-r from-[#333432] to-[#00B8A5]">Academy</span>
@@ -128,7 +128,7 @@ export function HeaderAluno() {
           <SidebarTrigger className="mr-4">
             <Menu className="h-6 w-6" color={'black'} />
           </SidebarTrigger>
-          <Link href="/dashboard" className="items-center space-x-2 flex md:hidden">
+          <Link href="/dash" className="items-center space-x-2 flex md:hidden">
           <LibraryBig className="h-6 w-6 text-[#00B8A5]" />
           <span className="font-extrabold text-xl text-[#333432]">
             suply<span className="font-extralight bg-clip-text text-transparent bg-gradient-to-r from-[#333432] to-[#00B8A5]">Academy</span>
@@ -146,11 +146,11 @@ export function HeaderAluno() {
           </form>
         </div>
         <div className="flex items-center space-x-4">
-          <Button variant="ghost" size="icon" className="relative">
+          {/* <Button variant="ghost" size="icon" className="relative">
             <Bell className="h-5 w-5" />
             <span className="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-600"></span>
             <span className="sr-only">Notificações</span>
-          </Button>
+          </Button> */}
           <Button
             variant="ghost"
             size="icon"
@@ -162,7 +162,7 @@ export function HeaderAluno() {
                 src="https://github.com/shadcn.png"
                 alt="@shadcn"
               />
-              <AvatarFallback>CN</AvatarFallback>
+              <AvatarFallback>MR</AvatarFallback>
             </Avatar>
             <span className="sr-only">Menu do usuário</span>
           </Button>
